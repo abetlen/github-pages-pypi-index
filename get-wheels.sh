@@ -12,6 +12,7 @@ assets=$(curl -s https://api.github.com/repos/abetlen/llama-cpp-python/releases/
 echo "<DOCTYPE html>"
 echo "<html>"
 echo "  <body>"
+echo "    <h1>Links for llama-cpp-python</h1>"
 
 # for each asset. if it's a wheel, echo an anchor tag with the download url
 for asset in $(echo $assets | jq -r .[].browser_download_url); do
