@@ -17,7 +17,8 @@ echo "    <h1>Links for llama-cpp-python</h1>"
 # for each asset. if it's a wheel, echo an anchor tag with the download url
 for asset in $(echo $assets | jq -r .[].browser_download_url); do
     if [[ $asset == *".whl" ]]; then
-        echo "    <a href=\"$asset\">$asset</a><br>"
+        echo "    <a href=\"$asset\">$asset</a>"
+        echo "    <br>"
     fi
 done
 
