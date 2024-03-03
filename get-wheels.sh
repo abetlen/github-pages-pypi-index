@@ -9,7 +9,7 @@ latest_release=$(curl -s https://api.github.com/repos/abetlen/llama-cpp-python/r
 assets=$(curl -s https://api.github.com/repos/abetlen/llama-cpp-python/releases/latest | jq -r .assets)
 
 # Create an index html file
-echo "<DOCTYPE html>"
+echo "<!DOCTYPE html>"
 echo "<html>"
 echo "  <body>"
 echo "    <h1>Links for llama-cpp-python</h1>"
