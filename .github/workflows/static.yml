@@ -39,24 +39,12 @@ jobs:
           mkdir index/whl
           mkdir index/whl/cpu
           mkdir index/whl/cpu/llama-cpp-python
-          echo <<EOF
-          <!DOCTYPE html>
-          <html>
-            <head></head>
-            <body>
-              <a href="llama-cpp-python/">llama-cpp-python</a>
-              <br>
-            </body>
-          </html>
-          EOF
-          > index.html
-          cp index.html index/whl/cpu/index.html
+          cp ./scripts/index.html index/whl/cpu/index.html
           ./scripts/release-to-pypi-index.sh > index/whl/cpu/llama-cpp-python/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          # path: '.'
           path: 'index'
       - name: Deploy to GitHub Pages
         id: deployment
