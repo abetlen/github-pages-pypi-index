@@ -39,7 +39,7 @@ jobs:
           mkdir index/whl
           mkdir index/whl/cpu
           mkdir index/whl/cpu/llama-cpp-python
-          cp index.html index/whl/cpu/llama-cpp-python/index.html
+          cp index.html index/whl/cpu/index.html
           ./get-wheels.sh > index/whl/cpu/llama-cpp-python/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
