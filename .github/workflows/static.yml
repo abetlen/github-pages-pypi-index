@@ -39,7 +39,18 @@ jobs:
           mkdir index/whl
           mkdir index/whl/cpu
           mkdir index/whl/cpu/llama-cpp-python
-          cp ./scripts/index.html index/whl/cpu/index.html
+
+          echo "<!DOCTYPE html>" > index.html
+          echo "<html>" >> index.html
+          echo "  <head></head>" >> index.html
+          echo "  <body>" >> index.html
+          echo "    <a href=\"llama-cpp-python/\">llama-cpp-python</a>" >> index.html
+          echo "    <br>"
+          echo "  </body>" >> index.html
+          echo "</html>" >> index.html
+
+          cp index.html index/whl/cpu/index.html
+
           ./scripts/release-to-pypi-index.sh > index/whl/cpu/llama-cpp-python/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
